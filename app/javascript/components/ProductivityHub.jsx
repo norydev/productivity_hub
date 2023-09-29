@@ -2,6 +2,7 @@ import React from "react"
 import { useQuery, gql } from '@apollo/client'
 import Task from "./Task"
 import Note from "./Note"
+import NewTask from "./NewTask"
 
 export const GET_TASKS_AND_NOTES = gql`
   {
@@ -27,11 +28,11 @@ export const ProductivityHub = () => {
   return(
     loading ? (<div>loading...</div>) : (
       <div>
-        <div className="flex">
+        <div className="flex flex-wrap">
           { tasks.map((task) => <Task task={task} key={task.id}/>) }
         </div>
         <div className="text-center m-5">
-          <button className="pointer-events-auto rounded-md bg-green-600 px-3 py-3 font-semibold leading-5 text-white hover:bg-green-500">Add Task</button>
+          <NewTask />
         </div>
 
         <div className="flex">
