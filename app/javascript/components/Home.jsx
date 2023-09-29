@@ -1,5 +1,6 @@
 import React from "react"
-import { ApolloClient, InMemoryCache } from '@apollo/client'
+import { ProductivityHub } from './ProductivityHub'
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
 export default () => {
   const client = new ApolloClient({
@@ -8,6 +9,8 @@ export default () => {
   })
 
   return (
-    <div>Content will come here</div>
+    <ApolloProvider client={client}>
+      <ProductivityHub />
+    </ApolloProvider>
   )
 }
