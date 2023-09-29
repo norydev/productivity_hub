@@ -28,14 +28,14 @@ export const ProductivityHub = () => {
     loading ? (<div>loading...</div>) : (
       <div>
         <div className="flex">
-          { tasks.map((task) => <Task task={task}/>) }
+          { tasks.map((task) => <Task task={task} key={task.id}/>) }
         </div>
         <div className="text-center m-5">
           <button className="pointer-events-auto rounded-md bg-green-600 px-3 py-3 font-semibold leading-5 text-white hover:bg-green-500">Add Task</button>
         </div>
 
         <div className="flex">
-          { notes.map((note) => <Note note={note} />) }
+          { notes.map((note) => <Note note={note} key={note.id} />) }
         </div>
         <div className="text-center m-5">
           <button className="pointer-events-auto rounded-md bg-green-600 px-3 py-3 font-semibold leading-5 text-white hover:bg-green-500">Add Note</button>

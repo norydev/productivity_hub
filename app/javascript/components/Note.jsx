@@ -31,7 +31,7 @@ export default ({note}) => {
     <div className="border rounded-lg shadow-xl text-slate-900 mx-auto w-96 dark:text-slate-300 mx-2 my-2 p-4 flex bg-slate-50" key={id}>
       <div className="grow">
         <h1 className="text-lg font-semibold text-slate-900">{name}</h1>
-        { content.map(line => <p>{line}</p>) }
+        { content.map((line, index) => <p key={index}>{line}</p>) }
       </div>
       <div>
         <EditButton />
